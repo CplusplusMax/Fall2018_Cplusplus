@@ -1,0 +1,13 @@
+#include <cstdio>
+
+int main(int argc, char** argv) {
+
+    int x = 5;
+    while(x > 0) {
+        printf("No\n");
+        x--;
+    }
+    printf("Well, OK\n");    
+  printf("Hello World!\n");
+  
+  } // end of main
