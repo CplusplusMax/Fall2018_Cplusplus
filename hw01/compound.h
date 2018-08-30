@@ -1,0 +1,1 @@
+double compound(double z);
