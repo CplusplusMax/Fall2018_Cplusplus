@@ -1,0 +1,126 @@
+Homework #2 Short Answer text file
+
+1) What is the difference between "int" and "const int"?
+	"int" denotes an integer datatype that can be changed as often as needed in a program; 
+	whereas "const int" markes a variable as final and the compiler will not allow the 
+	assigned value to be changed after it is initialized.
+	
+2) What is the difference between a function declaration and a function definition?
+	A function declaration tells the compiler that the function exists and describes
+	its arguments and return type; whereas a function definition provides the code 
+	that the function executes.
+	
+3) Why would you use an unsigned integer?
+	If you needed to use a larger number, the unsigned integer would allow for more space,
+	as the bit that would indicate the sign could be devoted to the value.  Also, if you 
+	wanted to make the code safer, such as in an array index, an unsigned integer does not
+	allow negative numbers; so this would prohibit negative numbers from appearing in the array index.
+	
+4) What is wrong with the following C++ code?  How would you fix it?
+
+	int sum;
+	
+	for(int i = 0); i < 1000; ++i){
+		sum += i;
+	}
+	printf("Sum of 0 to 999 is %d\n", sum);
+	
+	The code is missing "#include <cstdio" and also a main function "int main(int argc, char** argv) { }",
+	where the "{" follows the main function and the "}" is at the end of the code.  So the correct code
+	should look like the below:
+	
+	#include <cstdio>
+
+	int main(int argc, char** argv){
+	
+	int sum;
+	
+	for(int i = 0; i < 1000; ++i){
+		sum += i;
+	}
+	printf("Sum of 0 to 999 is %d\n", sum);
+}
+	
+5. What is wrong with the following code, and how would you fix it?
+
+   int n = 1;
+   if(n = 0) {
+	print("n is zero\n");
+}
+
+    Well, there are basic faults, such as missing the "#include <cstdio>" and
+	"int main(int argc, char** argv) { }" as noted in the previous code, but also
+	the fix would depend on if you wanted the "n is zero" to print or not.  If you
+	wanted n = 1 to remain and the code to print "n is zero" if n was indeed zero,
+	then the only other fix would be to make the "if(n = 0)" to be "if(n == 0)".
+	The code would compile and nothing would print because n=1 and not zero.
+	However, if you wanted "n is zero" to print, then you would need to make the
+	int n = #; to be the same as if(n == #), and of course if you wanted it to be
+	a correct representation, then you would write "int n = 0;" followed by 
+	if (n == 0).
+	Below represents two fixes depending upon your wish for correct code and a working
+	code that prints a correct representation of "n is zero".
+	
+	Working and compilable code:
+	
+	#include <cstdio>
+
+	int main(int argc, char** argv){
+
+       int n = 1;
+       if(n == 0) {
+	     printf("n is zero\n");
+       }
+    }       // The above code will compile and run; but because n does not equal 0, nothing will print.
+	
+	-------------------------------------------------
+	#include <cstdio>
+
+	int main(int argc, char** argv){
+
+		int n = 0;
+		if(n == 0) {
+		printf("n is zero\n");
+		}
+	}  //This code is working code that also correctly prints the message
+	
+6) How do you find out how many bytes are used to store a particular datatype in C++?  How many
+   bytes are used to store char, short, int, and long variables on your system?  What operating
+   system are you using?
+   
+   You use the "sizeof()" operator to determine the size of a variable.  example:  sizeof(int)
+   
+   if coding in C++
+   char = 1
+   short = 2
+   int = 4
+   long = 4 or 8  (I ran the below code, and my computer determined that the long was 4 bytes)
+   
+   I am using a Windows x64 Operating System.
+   
+   Code to check sizes:
+   #include <cstdio>
+
+int main(int argc, char** argv){
+
+   int n = 5;
+   printf("The size of an integer is %d\n", sizeof(n));
+   
+   char w;
+	printf("The size of a character is %d\n", sizeof(w));   
+   
+   short s = 24;
+	printf("The size of a short is %d\n", sizeof(s));   
+   
+   long l = 23546;
+	printf("The size of a long is %d\n", sizeof(l));   
+}
+//printout of above code is shown below
+
+$ ./numbah
+The size of an integer is 4
+The size of a character is 1
+The size of a short is 2
+The size of a long is 4
+
+   
