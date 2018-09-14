@@ -1,0 +1,82 @@
+Short Answer Text for HW03   -Glen
+
+1. What is wrong with the following code and how would you fix it?
+
+int min;
+for(int i=0; i<10; ++i) {
+
+	int value;
+	scanf("%d", &value);
+	if(i=0) min = value;
+	else if(value<min) min = value;
+	
+} // end of loop over input
+
+printf("The smallest or the 10 values you entered was %d\n", min);
+
+	***After Line 4 and before Line 5, no printf statement to ask the user to enter an integer,
+	which would then be scanned in and assigned to the variable value in Line 5.
+	For example, before the int value; line, add a line like this: printf("Enter an integer\n");
+	***Line 6, the code if(i=0) should read if(i==0)
+	***Missing {} after the if statement and after the elseif statement which would include
+	the min = value; code inside each.
+	***Line 11, inside the printf statement, the word "or" should probably be "of" to make sense
+
+2. What is wrong with the following code and how would you fix it?
+
+int* pointerToMax(int a, int b) {
+	if(a>b) return &a;
+	else return &b;
+}
+	***Return an int rather than a pointer to an int...so remove the "*" after int... 
+		int pointerToMax(int a, int b) {
+	***Problem is that this is a pointer to local data, and the variables declared inside
+	the function will go out of scope and the computer will delete them
+	***Move the RETURN statements out of the {} that follow the function,
+	so that the result is not only local to the function
+	***Both the if and else statements are missing their {}
+	which would include the return statments inside each
+
+3. What is wrong with the following code and how would you fix it?
+
+int* ptr = NULL;
+scanf("%d", ptr);
+printf("You entered %d", &ptr)
+
+	***Problem--don't dereference a pointer to a NULL, as the program will seg fault.
+	***So initialize a variable to an int (ex. "int value"), then change line 1
+	from int* ptr = NULL   to   int* ptr = &value;
+	***In the second line, scanf("%d", ptr); should read, scanf("%d", &ptr);  (thus ptr becomes &ptr)
+	***In the third line, printf("You entered %d", &ptr) should read
+	printf("You entered %d", ptr) (change &ptr to ptr)
+	***Finally, add a semicolon after the printf line,... printf("You entered %d", ptr);
+	
+	***Since I don't know what code came before this snippet, other possible issues could be that
+	 the coder hasn't asked the user (via a printf command) to enter a value,
+	 like printf("enter an integer\n"), in order to put an integer value from the keyboard into
+	 the variable that the &ptr points to.
+
+4. Describe what each of the following declare:
+(a) int* a;
+		This declares a pointer to a non-const int
+(b) const int b;
+		This declares a variable to a const int, where you can not change the variable value
+(c) const int* c;
+		This declares a pointer to a const int, where you can change the pointer,
+		but not the int variable that it points to
+(d) int* const d;
+		This declares a const pointer to an int, where you can modify the data it points to,
+		but not the pointer
+(e) const int* const e;
+		This delares a const pointer to a const int, where you can not modify the pointer,
+		nor can you modify the data it points to
+		
+5. What is the difference between the * and & operators?
+
+	The "*" dereferences a pointer (returns the data),
+	whereas the "&", as in "&a", returns a pointer to the data in variable a.
+
+6. What is the difference between const int* a and int* const b?
+
+	The "const int* a" declares a pointer to const int,
+	whereas "int* const b" declares const pointer to int.
