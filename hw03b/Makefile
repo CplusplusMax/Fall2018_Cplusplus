@@ -1,11 +1,11 @@
 all: main
 
-swapin.o: swapin.cpp swapin.h
-	g++ -c -Werror swapin.cpp
+swaahp.o: swaahp.cpp swaahp.h
+	g++ -c -Werror swaahp.cpp
 	
-main.o: main.cpp swapin.h
+
+main.o: main.cpp swaahp.h
 	g++ -c -Werror main.cpp
-	
-main: main.o swapin.o
-	g++ -o tryit main.o swapin.o
-	
+
+main: main.o swaahp.o
+	g++ -o swaahp main.o swaahp.o
