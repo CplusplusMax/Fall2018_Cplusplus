@@ -31,5 +31,6 @@ int counting() {
 	//close file	
 	fclose(fw);
 	
+	// return value that is input into main's printf telling user # of times run
 	return val-1;
 }
