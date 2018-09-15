@@ -18,8 +18,8 @@ printf("The smallest or the 10 values you entered was %d\n", min);
 	which would then be scanned in and assigned to the variable value in Line 5.
 	For example, before the int value; line, add a line like this: printf("Enter an integer\n");
 	***Line 6, the code if(i=0) should read if(i==0)
-	***Missing {} after the if statement and after the elseif statement which would include
-	the min = value; code inside each.
+	***For better organization, add {} after the if statement and after the else if statement which would include
+	the min = value; code inside each {}
 	***Line 11, inside the printf statement, the word "or" should probably be "of" to make sense
 
 2. What is wrong with the following code and how would you fix it?
@@ -28,12 +28,14 @@ int* pointerToMax(int a, int b) {
 	if(a>b) return &a;
 	else return &b;
 }
+	***Return an int rather than a pointer to an int...so remove the "*" after int... 
+		int pointerToMax(int a, int b) {
 	***Problem is that this is a pointer to local data, and the variables declared inside
 	the function will go out of scope and the computer will delete them
 	***Move the RETURN statements out of the {} that follow the function,
 	so that the result is not only local to the function
-	***Both the if and else statements are missing their {}
-	which would include the return statments inside each
+	***For better organization, add {} to both the if and else statements
+	which would include the return statments inside each {}
 
 3. What is wrong with the following code and how would you fix it?
 
@@ -46,8 +48,8 @@ printf("You entered %d", &ptr)
 	from int* ptr = NULL   to   int* ptr = &value;
 	***In the second line, scanf("%d", ptr); should read, scanf("%d", &ptr);  (thus ptr becomes &ptr)
 	***In the third line, printf("You entered %d", &ptr) should read
-	printf("You entered %d", *ptr) (change &ptr to *ptr to dereference the pointer and get the value)
-	***Finally, add a semicolon after the printf line,... printf("You entered %d", *ptr);
+	printf("You entered %d", ptr) (change &ptr to ptr)
+	***Finally, add a semicolon after the printf line,... printf("You entered %d", ptr);
 	
 	***Since I don't know what code came before this snippet, other possible issues could be that
 	 the coder hasn't asked the user (via a printf command) to enter a value,
