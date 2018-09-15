@@ -3,9 +3,7 @@
 
 int main(int argc, char** argv) {
 	
-	counting();
-	
-	//printf("%d", counting());	
+	printf("The number of times this program has run is %d\n", counting() );
 	
 }
 	

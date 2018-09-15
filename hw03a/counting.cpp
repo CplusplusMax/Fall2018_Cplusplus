@@ -1,29 +1,35 @@
 #include <cstdio>
 #include "counting.h"
 
-	int bam;
-	int now;
 	
 int counting() {
-	// declares the incremental variable "bam"
-	int bam = 1;
 	
-	FILE* fp = fopen("numbah.txt", "w");
+	// open file and write updated value of bam into the file called "numbah"
+	FILE* fp = fopen("numbah.txt", "r");
+	
+	// declare variable
+	int val;
 		
-		now = now + bam;
+	while(fscanf(fp, "%d", &val) != EOF) {
+		
+		printf("%d\n", val);
 	
-		fprintf(fp, "%d", now + 1);
-	
-	fclose(fp);
-
-	
-	FILE* fr = fopen("numbah.txt", "r");
-	
-	while(fscanf(fr, "%d", &now) != EOF) {
-		printf("%d\n", now);
 	}
 	
-	fclose(fr);
-
-	return now;
+	//increment variable
+	val++;
+	
+	//close file
+	fclose(fp);
+	
+	//open file to write new value
+	FILE* fw = fopen("numbah.txt", "w");
+	
+		//print new value to file
+		fprintf(fw, "%d", val);
+	
+	//close file	
+	fclose(fw);
+	
+	return val-1;
 }
