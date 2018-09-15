@@ -1,2 +1,3 @@
-// header file that declares the counting function
-int swapin();
+// header file that declares the swapping function
+
+int swapin(var1, var2);
