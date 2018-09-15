@@ -4,8 +4,9 @@
 	void swaahp(int* one, int* two) {
 
 		if(one > two)
-			
-			one = two;
-			two = one;
+	
+		// switch the number values
+		*one = *two;
+		*two = *one;
 	
 }
