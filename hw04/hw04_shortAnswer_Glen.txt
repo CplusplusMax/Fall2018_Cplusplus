@@ -1,0 +1,69 @@
+C++ Homework 04   Glen	19 September 2018
+
+1. What is wrong with the following code, and how would you fix it?
+
+void swap(int* a, int* b) {
+int* tmp = a;
+a = b;
+b = tmp;
+} // end of swap method
+
+
+	// Cannot assign a value to a pointer (should have int* tmp = &a;
+	//  and then dereference the pointer to the value later ( b = *tmp)
+	
+	
+2. What is wrong with the following code, and how would you fix it?
+
+char copy[8];
+const char* string = "hello";
+for(int i=0; string[i] != ’\0’; ++i) {
+copy[i] = string[i];
+}
+printf("%s\n", copy);
+
+	// Since string is assigned as a pointer to a const char, you cannot assign it to 
+	//     a non const  (i.e.  copy[i] = string[i])
+	// To fix it, change to (char* string) ... (or make copy a const)
+	//    also of note, copy has a length of 8, whereas "hello" is only a length of 5 plus
+	//     the "\0"
+
+3. Suppose you have a function that takes an array as an argument in the usual way, which is
+declared as:
+
+void f(int* array, int length);
+
+Suppose you also have an array declared as:
+
+int a[128];
+
+How would you pass a sub-array containing only the third through sixth elements of a to the
+function f?
+
+	//  you would write   f(a+2, 3)
+
+
+
+4. What is wrong with the following code and how would you fix it?
+
+double* allocateArray(int length) {
+double array[length];
+return array;
+}
+
+	// the function requires two arguments (array, length); this is missing the array
+	// to fix, just add the array in the parenthesis (type array, int length)
+
+
+5. What is wrong with the following code, and how would you fix it?
+
+char string[5];
+string[0] = ’h’;
+string[1] = ’e’;
+string[2] = ’l’;
+string[3] = ’l’;
+string[4] = ’o’;
+printf("%s\n", string);
+
+	// there should be a length of 6, as the string "hello" also includes a "\0"
+	//  to fix, change to  char string[6];
