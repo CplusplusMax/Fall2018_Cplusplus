@@ -29,11 +29,15 @@ int umpteen(unsigned char* string, int size) {
 	unsigned char* bytes = new unsigned char[numBytes];
 	
 	//return the pixel data in a one dimensional array called "bytes" of unsigned chars
-	fread(bytes, sizeof(bytes), numBytes, fp);
+	fread(bytes, sizeof(char), numBytes, fp);
 	
 	return 0;
 	
+	// close file
 	fclose(fp);
 	
+	// remove allocated memory to array so do not get "std::bad_alloc" error
+	delete [] bytes;
+	bytes = NULL;
 }
 	
