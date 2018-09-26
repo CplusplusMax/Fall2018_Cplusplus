@@ -25,10 +25,13 @@ int main(int argv, char** argc) {
 	printf("%d", max);
 	
 	// read binary data
-	//unsigned char* bytes = new unsigned char[numBytes];
+	// create an array of unsigned char type that will store on the heap using "new"
+	unsigned char* bytes = new unsigned char[numBytes];
 	
-	//fread(bytes, sizeof(bytes), numBytes, fp);
+	//return the pixel data in a one dimensional array called "bytes" of unsigned chars
+	fread(bytes, sizeof(bytes), numBytes, fp);
 	
+	fclose(fp);
 	
 }
 	
