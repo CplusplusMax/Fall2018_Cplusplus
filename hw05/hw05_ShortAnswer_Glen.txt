@@ -1,0 +1,13 @@
+ShortAnswer part of HW05 --Glen
+
+1) If you pass a two dimmensional array to a function that takes a two dimmensional array 
+as an argument, you have to specify the dimmensions of that array at compile time.
+**However, the same program could not handle images of any other size.
+
+2) You could use either of the following: 1) a Flat Array; or 2) the Numerical Recipes Trick,
+where you use two arrays--first create a flat array, and then you make an array of pointers 
+where each pointer in the array points to the start of a row in the flat array.
+
+3) My computer is little endian.
+
+4) Completed last programming assignment for reading and writing PPM files with a flat array.
