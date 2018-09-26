@@ -2,7 +2,7 @@
 #include "umpteen.h"
 
 
-int main(int argv, char** argc) {
+int umpteen(unsigned char* string, int size) {
 	//open the file
 	
 	FILE* fp = fopen("bitetest.ppm", "rb");
@@ -30,6 +30,8 @@ int main(int argv, char** argc) {
 	
 	//return the pixel data in a one dimensional array called "bytes" of unsigned chars
 	fread(bytes, sizeof(bytes), numBytes, fp);
+	
+	return 0;
 	
 	fclose(fp);
 	

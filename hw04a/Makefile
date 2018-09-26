@@ -1,11 +1,10 @@
-all: tryAgain
+all: main
 
-toy.o: toy.cpp toy.h
-	g++ -c -Werror toy.cpp
-
+umpteen.o: umpteen.cpp umpteen.h
+	g++ -c -Werror umpteen.cpp
 	
-tryAgain.o: tryAgain.cpp toy.h
-	g++ -c -Werror tryAgain.cpp
+main.o: main.cpp umpteen.h
+	g++ -c -Werror main.cpp
 	
-tryAgain: tryAgain.o toy.o
-	g++ -o main tryAgain.o toy.o
+main: main.o umpteen.o
+	g++ -o ahhh main.o umpteen.o
