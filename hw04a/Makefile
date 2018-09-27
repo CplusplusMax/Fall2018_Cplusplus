@@ -1,10 +1,10 @@
 all: main
 
-umpteen.o: umpteen.cpp umpteen.h
-	g++ -c -Werror umpteen.cpp
-	
-main.o: main.cpp umpteen.h
+umpteen2.o: umpteen2.cpp umpteen2.h
+	g++ -c -Werror umpteen2.cpp
+
+main.o: main.cpp umpteen2.h
 	g++ -c -Werror main.cpp
-	
-main: main.o umpteen.o
-	g++ -o ahhh main.o umpteen.o
+
+main: main.o umpteen2.o
+	g++ -o ughh main.o umpteen2.o

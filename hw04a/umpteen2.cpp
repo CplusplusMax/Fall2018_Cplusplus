@@ -1,17 +1,14 @@
 #include <cstdio>
 #include "umpteen2.h"
 
-
 	
-	
-unsigned char* umpteen(int* width, int* height) {
+unsigned char* umpteen2(int* width, int* height) {
 	//open the file
 	
 	FILE* fp = fopen("bitetest.ppm", "rb");
 	// Declare variables and initialize array for magic number to 3 "P +N +\0"
 	
 	int max;
-
 	char magic[3];
 	
 	// read Magic Number which is a string
