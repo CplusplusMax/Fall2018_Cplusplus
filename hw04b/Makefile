@@ -1,10 +1,13 @@
-all: mainTrop
+all: main
 
-tropical.o: tropical.cpp tropical.h
-	g++ -c -Werror tropical.cpp
+umpteen.o: umpteen.cpp umpteen.h
+	g++ -c -Werror umpteen.cpp
 
-mainTrop.o: mainTrop.cpp tropical.h
-	g++ -c -Werror mainTrop.cpp
+umpteenWrite.o: umpteenWrite.cpp umpteen.h
+	g++ -c -Werror umpteenWrite.cpp
 	
-mainTrop: mainTrop.o tropical.o
-	g++ -o many mainTrop.o tropical.o
+main.o: main.cpp umpteen.h
+	g++ -c -Werror main.cpp
+
+main: main.o umpteen.o umpteenWrite.o
+	g++ -o ughh main.o umpteen.o umpteenWrite.o
