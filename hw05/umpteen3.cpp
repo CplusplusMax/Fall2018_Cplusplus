@@ -1,6 +1,6 @@
 #include <cstdio>
 #include "umpteen3.h"
-#include "umpteen3Write.h"
+#include "twoD.h"
 unsigned char* umpteen3(int* width, int* height, int* max, char* magic) {
 	//open the file
 	FILE* fp = fopen("byteTest.ppm", "rb");

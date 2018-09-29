@@ -1,6 +1,6 @@
 #include <cstdio>
 #include "umpteen3.h"
-#include "umpteen3Write.h"
+#include "twoD.h"
 
 int main(int argv, char** argc) {
 
@@ -13,7 +13,6 @@ int main(int argv, char** argc) {
 	umpteen3(&width, &height, &max, magic);
 	
 
-	umpteen3Write(bytes, magic, &width, &height, max);
-
+	twoD(bytes, magic, &width, &height, max);
 
 }
