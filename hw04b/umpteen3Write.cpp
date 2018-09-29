@@ -6,7 +6,7 @@ unsigned char* umpteen3Write(unsigned char* bytes, char* magic, int* width,
 									int* height, int max) {
 	
 	// create new file and open for writing binary into it
-	FILE* fpr = fopen("biteCopy.ppm", "wb");
+	FILE* fpr = fopen("byteCpy.ppm", "wb");
 	
 	int numBytes = *width * *height * 3;
 	
