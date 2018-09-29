@@ -1,14 +1,19 @@
 #include <cstdio>
-#include "umpteen.h"
+#include "umpteen3.h"
+#include "umpteen3Write.h"
 
 int main(int argv, char** argc) {
 
 	unsigned char* bytes;
-	int numBytes;
 
-	umpteen(bytes, numBytes);
+	int width, height;
+	int max;
+	char magic[3];
 	
-	umpteenWrite(bytes, numBytes);
+	umpteen3(&width, &height, &max, magic);
+	
+
+	umpteen3Write(bytes, magic, &width, &height, max);
 
 
 }
