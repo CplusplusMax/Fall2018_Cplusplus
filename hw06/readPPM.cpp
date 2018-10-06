@@ -1,7 +1,9 @@
 #include <cstdio>
 #include <jpeglib.h>
+#include <jpec.h>
 #include "readPPM.h"
 #include "writeJPEG.h"
+#include "loadImage.h"
 
 unsigned char* readPPM(int* width, int* height, int* max, char* magic) {
 	//open the file

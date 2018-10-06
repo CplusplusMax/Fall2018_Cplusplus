@@ -1,13 +1,18 @@
 #include <cstdio>
 #include <jpeglib.h>
+#include <jpec.h>
 #include "readPPM.h"
 #include "writeJPEG.h"
+#include "loadImage.h"
+
+
 
 int main(int argv, char** argc) {
 
 	printf("Hello World\n");
 	
-	unsigned char* bdata;
+	const char* bdata;
+	const char* pname;
 
 	int width, height;
 	int max;
@@ -15,6 +20,13 @@ int main(int argv, char** argc) {
 	
 	bdata = readPPM(&width, &height, &max, magic);
 	
+	// load data
+	uint8_t* load_image(bdata, &width, &height);	
+	
+	// write jpeg to file
 	writeJPEG(bdata, magic, &width, &height, &max);
+	
 
+	
+	
 }
