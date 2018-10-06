@@ -1,11 +1,17 @@
 #include <cstdio>
 #include <jpeglib.h>
-#include <jpec.h>
+#include <string.h>
+#include <stdint.h>
+// using pacman -Ss opencv, searched for, found, and loaded mingw-w64-x86_64-opencv 
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+#include <assert.h>
+#include "jpec.h"
 #include "readPPM.h"
 #include "writeJPEG.h"
 #include "loadImage.h"
 	
-const char* writeJPEG(const char* bdata, char* magic, int* width, 
+unsigned char* writeJPEG(unsigned char* bdata, char* magic, int* width, 
 									int* height, int* max) {
 	
 
@@ -21,14 +27,14 @@ const char* writeJPEG(const char* bdata, char* magic, int* width,
 	if (argc == 2) {
 
 		int w, h;
-		uint8_t* img = load_image(argv[1], &w, &h);
+		unsigned uint8_t* img = loadImage(argv[1], &w, &h);
 		
 		// Create a JPEG encoder provided image data
 		jpec_enc_t* e = jpec_enc_new(img, w, h);
 				
 		// Compress
 		int len;
-		const uint8_t* jpeg = jpec_enc_run(e, &len);
+		unsigned uint8_t* jpeg = jpec_enc_run(e, &len);
 	
 		// create new file and open for writing binary into it
 		FILE* fpr = fopen("pTwoJ.jpeg", "wb");

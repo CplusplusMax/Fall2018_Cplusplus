@@ -1,6 +1,11 @@
 #include <cstdio>
 #include <jpeglib.h>
-#include <jpec.h>
+#include <string.h>
+#include <stdint.h>
+// using pacman -Ss opencv, searched for, found, and loaded mingw-w64-x86_64-opencv 
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+#include <assert.h>
 #include "readPPM.h"
 #include "writeJPEG.h"
 #include "loadImage.h"
