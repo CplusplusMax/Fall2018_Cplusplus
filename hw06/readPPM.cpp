@@ -19,7 +19,7 @@ unsigned char* readPPM(int* width, int* height, int* max, char* magic) {
 	int numBytes = *width * *height * 3;
 	
 	// read Max bytes which is set to the integer value of 255
-	fscanf(fp, "%d", max);
+	fscanf(fp, "%d\n", max);
 	printf("%d\n", *max);
 	
 	// print numBytes to see what the length of the array will be set to

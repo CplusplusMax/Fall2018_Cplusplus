@@ -1,0 +1,17 @@
+Short Answer for HW06  Glen Schmeling
+
+1) What are libraries good for?
+
+	Libraries allow you to link to the library (a collection of .o files)
+	instead of having to link to each individual object file.
+	
+2) What are the two types of libraries and how are they different?
+
+	The two types of libraries are "Static" libraries and "Shared Object" libraries.
+	
+	When you link to a "Static" library, its object files become part of the executable, 
+	just like the individual .o files, but they make the size of the executable larger.
+	
+	A "Shared object" library remains separate from the executable, and the machine code
+	is loaded by the executable at runtime, so a single library can be used by several
+	different executables.

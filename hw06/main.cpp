@@ -5,7 +5,7 @@
 
 int main(int argv, char** argc) {
 
-	printf("Hello World");
+	printf("Hello World\n");
 	
 	unsigned char* bdata;
 
@@ -13,7 +13,7 @@ int main(int argv, char** argc) {
 	int max;
 	char magic[3];
 	
-	readPPM(&width, &height, &max, magic);
+	bdata = readPPM(&width, &height, &max, magic);
 	
 	writeJPEG(bdata, magic, &width, &height, &max);
 
