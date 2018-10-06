@@ -4,11 +4,12 @@
 int main(int argv, char** argc) {
 
 	unsigned char* bytes;
-	int numBytes;
+	int max;
 	int width, height;
+	char magic[3];
 
 	//umpteen2(bytes, numBytes);
-	umpteen2(&width, &height);
+	bytes = umpteen2(&width, &height, &max, magic);
 
 
 }

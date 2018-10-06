@@ -2,44 +2,41 @@
 #include "umpteen2.h"
 
 	
-unsigned char* umpteen2(int* width, int* height) {
+unsigned char* umpteen2(int* width, int* height, int* max, char* magic) {
 	//open the file
 	
-	FILE* fp = fopen("bitetest.ppm", "rb");
+	FILE* fp = fopen("test.ppm", "rb");
 	// Declare variables and initialize array for magic number to 3 "P +N +\0"
-	
-	int max;
-	char magic[3];
-	
+
+
 	// read Magic Number which is a string
 	fscanf(fp, "%s", magic);
 	printf("%s\n", magic);
 	
 	// read width and height which are integers
 	fscanf(fp, "%d %d\n", width, height);
-	printf("%d %d\n", *width, *height);
-			
+	printf("%d %d\n", *width, *height);	
+	
+	// calculate numBytes
 	int numBytes = *width * *height * 3;
 	
 	// read Max bytes which is set to the integer value of 255
-	fscanf(fp, "%d", &max);
-	printf("%d", max);
+	fscanf(fp, "%d\n", max);
+	printf("%d\n", *max);
+	
+	// print numBytes to see what the length of the array will be set to
+	printf("The length of the binary array is: %d.\n", numBytes);
 	
 	// read binary data
 	// create an array of unsigned char type that will store on the heap using "new"
 	unsigned char* bytes = new unsigned char[numBytes];
-	
-	//return the pixel data in a one dimensional array called "bytes" of unsigned chars
+
+	//return the pixel data in a one dimensional array called "bdata" of unsigned chars
 	fread(bytes, sizeof(char), numBytes, fp);
 
 	// close file		
 	fclose(fp);
-
-	return width, height, bytes;
-
 	
-	// remove allocated memory to array so do not get "std::bad_alloc" error
-	delete [] bytes;
-	bytes = NULL;
-	
+	//return one dimensional array of binary bytes;
+	return bytes;
 }
