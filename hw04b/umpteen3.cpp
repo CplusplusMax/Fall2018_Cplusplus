@@ -6,7 +6,7 @@ unsigned char* umpteen3(int* width, int* height, int* max, char* magic) {
 	FILE* fp = fopen("byteTest.ppm", "rb");
 
 	// read Magic Number which is a string
-	fscanf(fp, "%s", magic);
+	fscanf(fp,"%s\n", magic);
 	printf("%s\n", magic);
 	
 	// read width and height which are integers
@@ -17,7 +17,7 @@ unsigned char* umpteen3(int* width, int* height, int* max, char* magic) {
 	int numBytes = *width * *height * 3;
 	
 	// read Max bytes which is set to the integer value of 255
-	fscanf(fp, "%d", max);
+	fscanf(fp,"%d\n", max);
 	printf("%d\n", *max);
 	
 	// print numBytes to see what the length of the array will be set to
@@ -28,12 +28,11 @@ unsigned char* umpteen3(int* width, int* height, int* max, char* magic) {
 	unsigned char* bytes = new unsigned char[numBytes];
 
 	//return the pixel data in a one dimensional array called "bytes" of unsigned chars
-	fread(bytes, sizeof(unsigned char), numBytes, fp);
+	fread(bytes, sizeof(char), numBytes, fp);
 
 	// close file		
 	fclose(fp);
 	
-	//return &magic, width, height, &max, bytes, numBytes;
+	//return array of binary called "bytes";
 	return bytes;
-	
 }

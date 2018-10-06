@@ -10,10 +10,10 @@ int main(int argv, char** argc) {
 	int max;
 	char magic[3];
 	
-	umpteen3(&width, &height, &max, magic);
+	bytes = umpteen3(&width, &height, &max, magic);
 	
 
-	umpteen3Write(bytes, magic, &width, &height, max);
+	umpteen3Write(bytes, magic, &width, &height, &max);
 
 
 }
