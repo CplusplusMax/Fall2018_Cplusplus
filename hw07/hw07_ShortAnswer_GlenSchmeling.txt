@@ -1,0 +1,96 @@
+Short Answer text file for HW07   Glen Schmeling
+1. (10 pts) What is wrong with the following code and how would you fix it?
+
+#ifndef PROJECTILE_H
+#define PROJECTILE_H
+
+class Projectile {
+
+private:
+double position;
+double speed;
+
+public:
+Projectile(double speed, double velocity);
+virtual ˜Projectile();
+double getSpeed() const;
+double getVelocity() const;
+
+} // end of Projecile class			// THIS LINE IS MISSING A SEMICOLON
+#endif
+
+		
+	// To fix, update the end of Projectile class line to read:  
+
+	};  // end of Projectile class
+
+
+2. (10 pts) The following is the definition of the constructor for the Projectile class above, but
+there are three things wrong with it. What are they and how would you fix them?
+
+Projectile(int speed, int velocity) {
+this.x = x;
+this.y = y;
+} // end of constructor
+
+	// The errors include: 1) No indication of which class the method belongs to
+	//   missing the "Projectile::" 2) the arguments in the method should state
+	//   "double" and not "int" and 3) this.x and this.y should be "this->x" and
+	//   "this->y"
+	//  Therefore, the code should look like this:
+	
+Projectile::Projectile(double speed, double velocity) {
+	this->x = x;
+	this->y = y;
+} // end of constructor
+
+
+3. (10 pts) Describe each of the following methods
+
+(a) int* method(int* arg);  
+
+	// this method takes a pointer to an int and returns a pointer to an int
+							
+(b) const int* method(int* arg);	
+
+	// this method takes a pointer to an int and returns a pointer to a const int
+
+
+(c) const int* const method(int* arg);	
+
+	// this method takes a pointer to an int and returns a const pointer to a const int
+										
+
+(d) const int* const method(const int* arg);	
+
+	// this method takes a pointer to a const int and returns 
+	//   a const pointer to a const int
+
+
+(e) const int* const method(const int* arg) const;
+
+	// this is a const method that takes a pointer to a const int and 
+	//   returns a const pointer to a const int
+
+
+4. In what ways are C++ strings better than C strings? In what ways are C strings better than
+C++ strings?
+
+	// C++ strings are better than C strings in that they are safer and more
+	//   convenient to use than C strings.
+	
+	// C strings are better than C++ strings in that they are 
+	//   elegant, lightweight, and efficiently designed...used in performance-critical code.
+	
+5. What is the difference between a pointer and a reference?
+
+	// A reference is like a pointer, however a reference: 1) cannot be null;
+	//   2) cannot change what it points to once it is initialized; 
+	//   3) is automatically dereferenced; and
+	//   4) have to initialize it to point to a valid variable when you declare it
+
+6. What is a destructor for?
+
+	// A destructor gets called when a class is deleted either when an object 
+	//   on the stack goes out of scope or when an object on the heap is deleted.
+	//   Basically it is used to clean up code and free up memory.
