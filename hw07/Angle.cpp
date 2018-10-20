@@ -37,7 +37,22 @@ void Angle::set(double angle) {
 
 Angle Angle::operator+(const Angle& angle) const {
 	
-	return Angle(angle + angle.getAngle());
+	//Angle* limit = new Angle();
+	
+	//limit->set(360.0);
+	Angle limit(360.0);
+	Angle* added = new Angle();
+	
+	if ( Angle(angle + angle.getAngle()).getAngle() > limit.getAngle()) {
+		
+		added->set(Angle(angle + angle.getAngle()).getAngle() - 360);
+	}
+	else {
+		added->set(Angle(angle + angle.getAngle()).getAngle());
+	}
+	return *added;
+
+	//return Angle(angle + angle.getAngle());
 		
 }	// end of operator+ overload
 
