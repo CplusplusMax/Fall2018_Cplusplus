@@ -110,6 +110,7 @@ Angle::Angle(const Angle& angle) {
 	*this = angle;
 	
 }  // end of copy constructor
+
 	
 	
 std::ostream& operator<<(std::ostream& out, const Angle& angle) {
