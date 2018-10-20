@@ -1,26 +1,38 @@
-#ifndef ANGLE_H
+// FILE: Angle.h
+// ANGLE CLASS DEFINITION
+
+#ifndef ANGLE_H		// used to avoid multiple definitions
 #define ANGLE_H
 
 class Angle {
 
 private:
 
-	double x;
-	double y;
+	double angle;
 
 public:
 
 	Angle();
 	
-	Angle(double x, double y);
+	Angle(double angle);
 	
 	virtual ~Angle();
 	
-	double getX() const;
-	double getY() const;
+	double getAngle() const;
 	
-	void set(double x, double y);
+	void set(double angle);
+	
+	Angle operator+(const Angle& angle) const;
+	
+	Angle operator-(const Angle& angle) const;
+	
+	Angle operator+=(const Angle& angle) const;
+	
+	Angle operator-=(const Angle& angle) const;
+	
+	// add Operator Overloads
+	// operator+(const Angle& ang) const
 
 };  // end of Angle Header file
 
-#endif
+#endif		// ANGLE_H

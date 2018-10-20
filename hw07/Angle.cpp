@@ -3,36 +3,95 @@
 
 Angle::Angle() {
 	
-	this->x = 0.0;
-	this->y = 0.0;
+	this->angle = 0.0;
 	
 } // end of constructor
 
-Angle::Angle(double x, double y) {
+Angle::Angle(double angle) {
 
-	this->x = x;
-	this->y = y;
+	this->angle = angle;
 	
 } // end of constructor
 
 Angle::~Angle() {
+	
+	printf("destructing %lf\n", angle);
+	
 }  // end of destructor
 
-double Angle::getX() const {
+double Angle::getAngle() const {
 
-	return x;
+	return angle;
 
-} // end of getX method
+} // end of getAng1 method
 
-double Angle::getY() const {
 
-	return y;
+void Angle::set(double angle) {
 
-} // end of getY method
-
-void Angle::set(double x, double y) {
-
-	this->x = x;
-	this->y = y;
+	this->angle = angle;
 	
 } // end of set method
+
+// add all the operator overloads
+
+Angle Angle::operator+(const Angle& angle) const {
+	
+	//if (angle < 360) {
+		
+		return Angle(angle + angle.getAngle());
+		
+		//return *this;
+	//}
+	//else {
+		
+	//	angle = angle + angle.getAngle() - 360;
+		
+	//	return *this;
+	//}
+}	// end of operator+ overload
+
+Angle Angle::operator-(const Angle& angle) const {
+	
+	//if (angle < 360) {
+		
+		return Angle(angle - angle.getAngle());
+		
+		//return *this;
+	//}
+	//else {
+	//	angle - angle.getAngle() - 360;
+		
+	//	return *this;
+	//}
+}	// end of operator- overload
+
+Angle Angle::operator+=(const Angle& angle) const {
+	
+	//if (angle < 360) {
+		
+		return Angle(angle += angle.getAngle());
+		
+		//return *this;
+	//}
+	//else {
+	//	return Angle(angle - angle.getAngle() - 360);
+	//}
+}	// end of operator+ overload
+
+Angle Angle::operator-=(const Angle& angle) const {
+	
+	//if (angle < 360) {
+		return Angle(angle -= angle.getAngle());
+		
+		//return *this;
+	//}
+	//else {
+	//	angle -= angle.getAngle() - 360;
+		
+	//	return *this;
+	//}
+}	// end of operator+ overload
+
+// *, /, *=, /=
+
+// = for Angle, = for Angle, ==
