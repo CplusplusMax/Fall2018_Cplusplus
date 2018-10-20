@@ -1,6 +1,9 @@
 // FILE: Angle.h
 // ANGLE CLASS DEFINITION
 
+#include <cstdio>
+#include <iostream>
+
 #ifndef ANGLE_H		// used to avoid multiple definitions
 #define ANGLE_H
 
@@ -29,9 +32,21 @@ public:
 	Angle operator+=(const Angle& angle) const;
 	
 	Angle operator-=(const Angle& angle) const;
+
+	bool operator==(const Angle& angle) const;
+
+	Angle operator=(const Angle& angle) const;
 	
-	// add Operator Overloads
-	// operator+(const Angle& ang) const
+	//Angle operator=(const double angle) const;
+	
+	Angle operator*(const Angle& angle) const;
+	
+	Angle operator/(const Angle& angle) const;
+	
+	Angle operator*=(const Angle& angle) const;
+	
+	Angle operator/=(const Angle& angle) const;
+		
 
 };  // end of Angle Header file
 

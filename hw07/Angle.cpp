@@ -1,4 +1,5 @@
 #include <cstdio>
+#include <iostream>
 #include "Angle.h"
 
 Angle::Angle() {
@@ -36,62 +37,68 @@ void Angle::set(double angle) {
 
 Angle Angle::operator+(const Angle& angle) const {
 	
-	//if (angle < 360) {
+	return Angle(angle + angle.getAngle());
 		
-		return Angle(angle + angle.getAngle());
-		
-		//return *this;
-	//}
-	//else {
-		
-	//	angle = angle + angle.getAngle() - 360;
-		
-	//	return *this;
-	//}
 }	// end of operator+ overload
 
 Angle Angle::operator-(const Angle& angle) const {
 	
-	//if (angle < 360) {
 		
-		return Angle(angle - angle.getAngle());
-		
-		//return *this;
-	//}
-	//else {
-	//	angle - angle.getAngle() - 360;
-		
-	//	return *this;
-	//}
+	return Angle(angle - angle.getAngle());
+	
 }	// end of operator- overload
 
 Angle Angle::operator+=(const Angle& angle) const {
 	
-	//if (angle < 360) {
 		
-		return Angle(angle += angle.getAngle());
-		
-		//return *this;
-	//}
-	//else {
-	//	return Angle(angle - angle.getAngle() - 360);
-	//}
-}	// end of operator+ overload
+	return Angle(angle += angle.getAngle());
+
+}	// end of operator+= overload
 
 Angle Angle::operator-=(const Angle& angle) const {
 	
-	//if (angle < 360) {
-		return Angle(angle -= angle.getAngle());
+	return Angle(angle -= angle.getAngle());
 		
-		//return *this;
-	//}
-	//else {
-	//	angle -= angle.getAngle() - 360;
+}	// end of operator-= overload
+
+bool Angle::operator==(const Angle& angle) const {
 		
-	//	return *this;
-	//}
-}	// end of operator+ overload
+	return angle == angle.getAngle();
+		
+	}  // end of operator== overload
+	
+Angle Angle::operator=(const Angle& angle) const {
+	
+	return Angle(angle = angle.getAngle());
+		
+	} // end of operator= overload for angle
+	
+//Angle Angle::operator=(const double angle) const {
+	
+	//return angle = (*this)(const double angle);  // 
+	
+//}  // end of operator= overload for double
 
-// *, /, *=, /=
-
-// = for Angle, = for Angle, ==
+Angle Angle::operator*(const Angle& angle) const {
+	
+	return Angle(angle * angle.getAngle());
+		
+	} // end of operator* overload
+	
+Angle Angle::operator/(const Angle& angle) const {
+	
+	return Angle(angle / angle.getAngle());
+		
+	} // end of operator/ overload
+	
+Angle Angle::operator*=(const Angle& angle) const {
+	
+	return Angle(angle *= angle.getAngle());
+		
+	} // end of operator*= overload
+	
+Angle Angle::operator/=(const Angle& angle) const {
+	
+	return Angle(angle /= angle.getAngle());
+		
+	} // end of operator/= overload
