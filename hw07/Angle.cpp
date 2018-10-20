@@ -73,9 +73,11 @@ Angle Angle::operator=(const Angle& angle) const {
 		
 	} // end of operator= overload for angle
 	
-//Angle Angle::operator=(const double angle) const {
+//const double operator=(const double angle) {
 	
-	//return angle = (*this)(const double angle);  // 
+	//Angle angle = (*this)angle;
+	
+	//return angle;
 	
 //}  // end of operator= overload for double
 
@@ -102,3 +104,22 @@ Angle Angle::operator/=(const Angle& angle) const {
 	return Angle(angle /= angle.getAngle());
 		
 	} // end of operator/= overload
+
+Angle::Angle(const Angle& angle) {
+	
+	*this = angle;
+	
+}  // end of copy constructor
+	
+	
+std::ostream& operator<<(std::ostream& out, const Angle& angle) {
+	
+	out << angle;
+	
+	return out;
+}
+	
+	
+	
+	
+	

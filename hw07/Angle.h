@@ -15,39 +15,44 @@ private:
 
 public:
 
-	Angle();
+	Angle();					// non-argument constructor
 	
-	Angle(double angle);
+	Angle(double angle);		// argument constructor
 	
-	virtual ~Angle();
+	virtual ~Angle();			// virtual destructor
 	
-	double getAngle() const;
+	double getAngle() const;	// get method
 	
-	void set(double angle);
+	void set(double angle);		// set method
 	
-	Angle operator+(const Angle& angle) const;
+	Angle operator+(const Angle& angle) const;	// operator+ overload
 	
-	Angle operator-(const Angle& angle) const;
+	Angle operator-(const Angle& angle) const;	// operator- overload
 	
-	Angle operator+=(const Angle& angle) const;
+	Angle operator+=(const Angle& angle) const;	// operator+= overload
 	
-	Angle operator-=(const Angle& angle) const;
+	Angle operator-=(const Angle& angle) const;	// operator-= overload
 
-	bool operator==(const Angle& angle) const;
+	bool operator==(const Angle& angle) const;	// operator== overload
 
-	Angle operator=(const Angle& angle) const;
+	Angle operator=(const Angle& angle) const;	// operator= overload
 	
-	//Angle operator=(const double angle) const;
+	const double operator=(const double angle);	// operator= double overload
 	
-	Angle operator*(const Angle& angle) const;
+	Angle operator*(const Angle& angle) const;	// operator* overload
 	
-	Angle operator/(const Angle& angle) const;
+	Angle operator/(const Angle& angle) const;	// operator/ overload
 	
-	Angle operator*=(const Angle& angle) const;
+	Angle operator*=(const Angle& angle) const;	// operator*= overload
 	
-	Angle operator/=(const Angle& angle) const;
+	Angle operator/=(const Angle& angle) const;	// operator/= overload
+	
+	Angle(const Angle& angle);	// copy constructor
 		
+	friend std::ostream& operator<<(std::ostream& out, const Angle& angle);
 
-};  // end of Angle Header file
+};  // end of Angle Class
+
+std::ostream& operator<<(std::ostream& out, const Angle& angle);
 
 #endif		// ANGLE_H
