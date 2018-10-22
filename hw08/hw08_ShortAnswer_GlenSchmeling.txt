@@ -1,0 +1,44 @@
+HW08 ShortAnswer text -Glen Schmeling	21 Oct 2018
+
+1. What does the "friend" keyword do?
+
+		It lets a class grant special access to external functions, such as overloading
+	the << operator to make your own objects printable.
+
+2. Why should you never use "using namespace std;" ?
+
+		If two people use the same package name, they will have naming collisions; therefore,
+	if you put it in a header file, you will import the namespace in any C++ file that
+	includes that header, which will remove your ability to use that namespace to avoid
+	naming collisions.
+	
+3. Describe four ways to return an object from a method.
+
+	1) You could return a reference to a class member; but everytime you call the method, 
+		it returns the same object.
+	2) You could return a copy of an object; but this creates a copy, and leads to
+		inefficient code.
+	3) You could return an object created on the heap; but you are forcing the caller to
+		deal with heap data and the memory management that comes with it, also it is 
+		allocating fresh memory every time you call it.
+	4) You could use an argument to pass a non-const reference to an existing object,
+	    which the method modifies.  (and return nothing..."void")  Best method described,
+		(but will not work if the object does not have methods that let you set it to the
+		desired state).
+
+4. What does the "mutable" keyword do?
+
+		The mutable keyword makes class members (variables only) that can be modified
+	inside a const method.  So instead of nothing being able to be modified because
+	you used a const method, this allows specified variable to be modified.
+
+5. What are the three ways a class can contain objects in C++?
+
+	1) As actual objects
+	2) As a reference
+	3) As a pointer
+
+6. What is a Singleton?
+
+		A Singleton is a class that can only ever have one instance.
+	
