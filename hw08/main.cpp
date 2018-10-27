@@ -1,8 +1,11 @@
 #include <cstdio>
 #include <iostream>
 #include "Angle.h"
+#include "Log.h"
 
 int main(int argc, char** argv ) {
+
+	char msg;
 
 	std::cout << "Aloha Professor!...and to the fishes in the deep blue sea." <<std::endl<<std::endl;
 	
@@ -19,22 +22,17 @@ int main(int argc, char** argv ) {
 	// initializing a non-pointer type angle
 	Angle plus(90.0);
 	
-	
-	
 	std::cout << "The first fish turns: " << ang1->getAngle() << " degrees." << std::endl;
-	
 	std::cout << "The second fish turns: " << ang2->getAngle() << " degrees." << std::endl;
-	
 	std::cout << "The third fish turns: " << ang3->getAngle() << " degrees." << std::endl;
-
 	std::cout << "The fourth fish turns: " << ang4->getAngle() << " degrees." << std::endl << std::endl;
-	
 	std::cout << "Movement one is: " << ang2->getAngle() + ang3->getAngle() << " degrees." << std::endl;
-
 	std::cout << "Movement two is: " << ang3->getAngle() - ang2->getAngle() << " degrees." << std::endl;
-	
 	std::cout << "Movement three is: " << ang4->getAngle() / ang3->getAngle() << " degrees." << std::endl<<std::endl;
-		
 	std::cout << "The new non-pointer angle on the stack is: " << plus.getAngle() <<std::endl;  // using a non-pointer type angle
 
+	//Log& logIt = Log::getInstance();
+	//logIt.pr();
+	
+	
 }
