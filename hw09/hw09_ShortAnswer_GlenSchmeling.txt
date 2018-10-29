@@ -1,0 +1,74 @@
+Short_Answer text for HW09     Glen Schmeling
+
+1. What is the difference between “downcasting” and “upcasting”?
+
+	Downcasting converts an object back to a subclass, 
+	whereas upcasting refers to an object as though it were its superclass.
+
+
+2. Why would you mark a method as virtual? Why wouldn’t you?
+
+	You would mark a method virtual if you wanted a subclass to override 
+	that method to call the subclass' method instead of the superclass' method, 
+	and because without making it virtual the class would not call the right destructor.
+
+	You wouldn't want to do this (i.e. mark every method virtual), as it would
+	run slower, so use only when needed.
+
+	
+3. What is the difference between a dynamic cast and a static cast? Why would you use
+one over the other?
+
+	A dynamic cast looks at the actual type of the object being cast and checks if it is
+	legal to cast it to the requested type.
+	
+	A static cast checks what it can at compile time, but doesn't look at the actual
+	type of the object at runtime.
+	
+	You would use static casting over dynamic casting if you needed extra speed, 
+	because	dynamic casting is slower as it has to search through the inheritance 
+	tree at runtime.
+	
+	You would use dynamic casting pretty much the rest of the time, as it is safer.
+
+
+4. When might you use a const cast?
+
+	1) ...to use a method argument that another owner forgot to mark const and you have
+	a const object that would be used by that method.  So by using a const cast, 
+	you can remove the const on your object to be able to use that method.
+	
+	2) ...to convert "this" from a const pointer to just a pointer when working with a 
+	method like a get method that has both a const and a non-const version, then 
+	when you call that get method, you get a workable non-const version of the method.
+	
+
+5. Suppose you have a Fruit base class and a Banana subclass. Suppose you have a 
+banana declared like this:
+
+Banana b;
+
+What is the difference between what happens when you pass your banana to a method
+declared like this:
+
+void eat(Fruit f);
+					// here, you would be equating a banana specific object to a fruit 
+					//   object, so all the banana data is removed and thus you can't 
+					//   convert it back into a banana.  
+					
+vs. one declared like this:
+
+void eat(const Fruit& f);.
+					// here note that the Banana b is non-const, so you may get a
+					//   non-const to const error.
+					// otherwise, this would correctly upcast the banana as a reference
+					//   to a const fruit, and then it could be converted back to a
+					//   banana later as all of it's banana attributes would still exist.
+
+
+6. What is the difference between how Java and C++ handle multiple inheritance?
+
+	In Java, you would have to implement the related method in both of the other classes
+	when making a class interface.  In C++ you can save time and effort by creating a
+	full class that would have a variable holding the required information and its own
+	implementation of a get method.
