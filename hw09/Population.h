@@ -7,11 +7,10 @@
 class Population {
 
 private:
-	Fish** fishes;
-	double fishes = new Fish*[max_fishes];;
-
+	Fish** fishes = new Fish*[10000];
+	//Fish* fishes = new Fish*[int];;
+	
 public:
-
 	Population();	
 	virtual ~Population();
 

@@ -31,7 +31,7 @@ double* Population::getPos(int fish, double x, double y) {
 	return fishes[fish].getPos(double x, double y);
 }
 
-std::ostream& operator<<(std::ostream& out, const Population& fishes[]) {
-	out<<fishes[];
+std::ostream& operator<<(std::ostream& cout, const Population& fishes[]) {
+	cout<<fishes[];
 	return out;
 }

@@ -11,17 +11,17 @@
 #include "FlippyFish.h"
 #include "DrunkenFish.h"
 
-DrunkenFish:Fish::Fish();
-DrunkenFish:Fish::~Fish(); // end of destructor
+FlippyFish::Fish();
+FlippyFish::~Fish(); // end of destructor
 
-void FlippyFish:Fish::position();
-void FlippyFish:Fish::position(double x, double y);
-double FlippyFish:Fish::speed();
-double FlippyFish:Fish::direction(const Angle& angle);
-double FlippyFish:Fish::turn_rate(const Angle& angle);
-double FlippyFish:Fish::getX() const;
-double FlippyFish:Fish::getY() const;
-void FlippyFish:Fish::set(double x, double y);
+void FlippyFish::position();
+void FlippyFish::position(double x, double y);
+double FlippyFish::speed();
+double FlippyFish::direction(const Angle& angle);
+double FlippyFish::turn_rate(const Angle& angle);
+double FlippyFish::getX() const;
+double FlippyFish::getY() const;
+void FlippyFish::set(double x, double y);
 
 double FlippyFish::swim() {
 	int choice = rand() % 3;
@@ -31,14 +31,8 @@ double FlippyFish::swim() {
 	y += speed * direction.getSin();
 } // end of drunken fish swim method
 
-std::ostream& operator<<(std::ostream& out, const Angle& angle) {
-	out<<angle;
-	return out;
-}
 
-
-
-std::ostream& operator<<(std::ostream& out, const Angle& angle) {
-	out<<angle;
+std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
+	cout<<angle;
 	return out;
 }

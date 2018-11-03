@@ -23,8 +23,8 @@ int main(int argc, char** argv ) {
 	ang3->set(80.0);
 	ang4->set(320.0);
 	
-	FlippyFish* Fred = new Fish();
-	DrunkenFish* Dave = new Fish();
+	FlippyFish* Fred = new FlippyFish();
+	DrunkenFish* Dave = new DrunkenFish();
 	
 	// initializing a non-pointer type angle
 	Angle plus(90.0);

@@ -1,26 +1,24 @@
 // FILE: DrunkenFish.h
 // FISH CLASS DEFINITION
-
+#include "Fish.h"
 #ifndef DRUNKENFISH_H		// used to avoid multiple definitions
 #define DRUNKENFISH_H
 
-class DrunkenFish {
+class DrunkenFish: public Fish {
 
-private:
+//private:
 
-	double x;
-	double y;
+	//double x;
+	//double y;
 
 public:
 
-	Fish();	
-	virtual ~Fish();
+	DrunkenFish();	
+	virtual ~DrunkenFish();
 
 	void position();
 	void position(double x, double y);
 	double speed();
-	double direction(const Angle& angle);
-	double turn_rate(const Angle& angle);
 	double getX() const;
 	double getY() const;
 	void set(double x, double y);
@@ -30,18 +28,3 @@ public:
 	
 }; // end of Fish class
 #endif
-
-
-//DrunkenFish:Fish::Fish();
-//DrunkenFish:Fish::~Fish(); // end of destructor
-
-//void DrunkenFish:Fish::position();
-//void DrunkenFish:Fish::position(double x, double y);
-//double DrunkenFish:Fish::speed();
-//double DrunkenFish:Fish::direction(const Angle& angle);
-//double DrunkenFish:Fish::turn_rate(const Angle& angle);
-//double DrunkenFish:Fish::getX() const;
-//double DrunkenFish:Fish::getY() const;
-//void DrunkenFish:Fish::set(double x, double y);
-
-//double DrunkenFish::swim()

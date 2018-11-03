@@ -19,7 +19,7 @@ Angle::Angle(double angle) {
 } // end of constructor
 
 Angle::~Angle() {
-	std::out<<"destructing %lf" << angle << std::endl<<std::endl;
+	std::cout<<"destructing %lf" << angle << std::endl<<std::endl;
 }  // end of destructor
 
 double Angle::getAngle() const {
@@ -33,24 +33,24 @@ void Angle::set(double angle) {
 // add all the operator overloads
 
 Angle Angle::operator+=(const Angle& angle) const {
-	while(angle->getAngle() > 359)	{
+	while(angle.getAngle() > 359)	{
 		return Angle(angle += angle.getAngle()-360);
 	} // end while
 	return Angle(angle += angle.getAngle());
 }	// end of operator+= overload
 
 Angle Angle::operator-=(const Angle& angle) const {
-	while(angle->getAngle() > 359)	{
+	while(angle.getAngle() > 359)	{
 	return Angle(angle -= angle.getAngle()-360);
 	} // end while
 	return Angle(angle += angle.getAngle());
 }	// end of operator-= overload
 
-double Angle::getSin() const;
+double Angle::getSin() const {
 	return sin(angle*M_PI/180.0);
 } // end getSin() method
 
-double Angle::getCos() const;
+double Angle::getCos() const {
 	return cos(angle*M_PI/180.0);	
 } // end getCos() method
 
@@ -62,9 +62,9 @@ Angle::Angle(const Angle& angle) {
 	*this = angle;
 }  // end of copy constructor
 	
-std::ostream& operator<<(std::ostream& out, const Angle& angle) {
-	out << angle;
-	return out;
+std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
+	cout << angle;
+	return cout;
 }
 	
 	

@@ -29,13 +29,13 @@ double Fish::speed(){
 	return 30;
 }
 
-double Fish::direction(const Angle& angle) {
-	return angle;
-}
+//double Fish::direction(const Angle& angle) {
+//	return angle;
+//}
 
-double Fish::turn_rate(const Angle& angle) {
-	return Angle(angle + angle.getAngle()/4);
-}
+//double Fish::turn_rate(const Angle& angle) {
+//	return Angle(angle + angle.getAngle()/4);
+//}
 
 double Fish::getX() const {
 	return x;
@@ -50,15 +50,10 @@ void Fish::set(double x, double y) {
 	this->y = y;
 } // end of set() method
 
-double Fish::swim() {
-	int choice = rand() % 3;
-	if(choice == 0) direction -= turn_rate;
-	else if(choice == 2) direction += turn_rate;
-	x += speed * direction.getCos();
-	y += speed * direction.getSin();
 
-std::ostream& operator<<(std::ostream& out, const Angle& angle) {
-	out<<angle;
+
+std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
+	cout<<angle;
 	return out;
 }
 

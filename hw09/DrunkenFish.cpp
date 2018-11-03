@@ -11,17 +11,15 @@
 #include "FlippyFish.h"
 #include "DrunkenFish.h"
 
-DrunkenFish:Fish::Fish();
-DrunkenFish:Fish::~Fish(); // end of destructor
+DrunkenFish::Fish();
+DrunkenFish::~Fish(); // end of destructor
 
-void DrunkenFish:Fish::position();
-void DrunkenFish:Fish::position(double x, double y);
-double DrunkenFish:Fish::speed();
-double DrunkenFish:Fish::direction(const Angle& angle);
-double DrunkenFish:Fish::turn_rate(const Angle& angle);
-double DrunkenFish:Fish::getX() const;
-double DrunkenFish:Fish::getY() const;
-void DrunkenFish:Fish::set(double x, double y);
+void DrunkenFish::position();
+void DrunkenFish::position(double x, double y);
+double DrunkenFish::speed();
+double DrunkenFish::getX() const;
+double DrunkenFish::getY() const;
+void DrunkenFish::set(double x, double y);
 
 double DrunkenFish::swim() {
 	int choice = rand() % 4;
@@ -30,7 +28,8 @@ double DrunkenFish::swim() {
 	else if(choice == 2) y -= speed;
 	else y -= speed;
 } // end of drunken fish swim method
-std::ostream& operator<<(std::ostream& out, const Angle& angle) {
-	out<<angle;
+
+std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
+	cout<<angle;
 	return out;
 }

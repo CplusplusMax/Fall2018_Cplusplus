@@ -16,15 +16,14 @@ public:
 	Fish();	
 	virtual ~Fish();
 
-	void position();
-	void position(double x, double y);
-	double speed();
-	double direction(const Angle& angle);
-	double turn_rate(const Angle& angle);
+	virtual void position();
+	virtual void position(double x, double y);
+	virtual double speed();
+
 	double getX() const;
 	double getY() const;
-	void set(double x, double y);
-	double swim();
+	virtual void set(double x, double y);
+	virtual double swim()=0;
 	
 	friend std::ostream& operator<<(std::ostream& out, const Angle& angle);
 	
