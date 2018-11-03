@@ -14,17 +14,34 @@
 Population::Population() {
 	FlippyFish* fishes = new Fish*[10000];
 	DrunkenFish* dfishes = new DrunkenFish*[10000];
-}
+} // end of constructor
+
 Population::~Population() {
 }  // end of destructor
 
 Population::add(int fish) {
+	int max_fishes = 10000;
+	while (fish < max_fishes) {
+		if (int i = 0; i < max_fishes; ++i)
+			fish = i;	
+	}
+	}	// end while loop
+	
 	return fishes[fish];
-} // end of no-argument constructor
+}
 
 Population::remove(int fish) {
+	while (fishes[fish] >= fishes[1]) {
+		if (int i = 0; i < max_fish; ++i)
+	double dist = fish[i].getX() * fish[i].getX() + fish[i].getY() * fish[i].getY();
+	double distance = double sqrt(dist);
+	if (distance > 100) {
+		fish[i] = NULL;	
+	}
+	}	// end while loop
+	
 	return fishes[fish];
-} // end of constructor
+}
 
 double Population::size(){
 	return 30;
