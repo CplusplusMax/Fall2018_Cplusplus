@@ -26,7 +26,7 @@ public:
 	void set(double x, double y);
 	double swim();
 	
-	friend std::ostream& operator<<(std::ostream& out, const Angle& angle);
+	friend std::ostream& operator<<(std::ostream& cout, const Angle& angle);
 	
 }; // end of Fish class
 #endif

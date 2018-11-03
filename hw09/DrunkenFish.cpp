@@ -31,5 +31,5 @@ double DrunkenFish::swim() {
 
 std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
 	cout<<angle;
-	return out;
+	return cout;
 }

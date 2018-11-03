@@ -38,8 +38,8 @@ int main(int argc, char** argv ) {
 	std::cout << "Movement three is: " << ang4->getAngle() / ang3->getAngle() << " degrees." << std::endl<<std::endl;
 	std::cout << "The new non-pointer angle on the stack is: " << plus.getAngle() <<std::endl;  // using a non-pointer type angle
 
-	//Log& logIt = Log::getInstance();
-	//logIt.pr();
+	Log& logIt = Log::getInstance();
+	//logIt.printf();
 	
 	
 }

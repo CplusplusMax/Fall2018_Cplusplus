@@ -25,7 +25,7 @@ public:
 	virtual void set(double x, double y);
 	virtual double swim()=0;
 	
-	friend std::ostream& operator<<(std::ostream& out, const Angle& angle);
+	friend std::ostream& operator<<(std::ostream& cout, const Angle& angle);
 	
 }; // end of Fish class
 #endif

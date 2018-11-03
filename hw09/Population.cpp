@@ -10,7 +10,10 @@
 #include "FlippyFish.h"
 #include "DrunkenFish.h"
 
+
 Population::Population() {
+	FlippyFish* fishes = new Fish*[10000];
+	DrunkenFish* dfishes = new DrunkenFish*[10000];
 }
 Population::~Population() {
 }  // end of destructor

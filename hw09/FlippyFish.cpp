@@ -17,8 +17,12 @@ FlippyFish::~Fish(); // end of destructor
 void FlippyFish::position();
 void FlippyFish::position(double x, double y);
 double FlippyFish::speed();
-double FlippyFish::direction(const Angle& angle);
+double FlippyFish::direction(const Angle& angle){
+	return angle;
+}
 double FlippyFish::turn_rate(const Angle& angle);
+	return Angle(angle + angle.getAngle()/4);
+}
 double FlippyFish::getX() const;
 double FlippyFish::getY() const;
 void FlippyFish::set(double x, double y);
@@ -34,5 +38,5 @@ double FlippyFish::swim() {
 
 std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
 	cout<<angle;
-	return out;
+	return cout;
 }
