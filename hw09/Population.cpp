@@ -22,7 +22,7 @@ Population::~Population() {
 Population::add(int fish) {
 	int max_fishes = 10000;
 	while (fish < max_fishes) {
-		if (int i = 0; i < max_fishes; ++i)
+		for (int i = 0; i < max_fishes; ++i)
 			fish = i;	
 	}
 	}	// end while loop
@@ -32,7 +32,7 @@ Population::add(int fish) {
 
 Population::remove(int fish) {
 	while (fishes[fish] >= fishes[1]) {
-		if (int i = 0; i < max_fish; ++i)
+		for (int i = 0; i < max_fish; ++i)
 	double dist = fish[i].getX() * fish[i].getX() + fish[i].getY() * fish[i].getY();
 	double distance = double sqrt(dist);
 	if (distance > 100) {
