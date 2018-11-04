@@ -12,32 +12,34 @@
 
 
 Population::Population() {
-	FlippyFish* fishes = new Fish*[10000];
-	DrunkenFish* dfishes = new DrunkenFish*[10000];
+	int max_fFishes = 10000;
+	int max_dFishes = 10000;
+	FlippyFish* fFishes = new Fish*[max_fFishes];
+	DrunkenFish* dFishes = new DrunkenFish*[max_dFishes];
 } // end of constructor
 
 Population::~Population() {
 }  // end of destructor
 
 Population::add(int fish) {
-	int max_fishes = 10000;
-	while (fish < max_fishes) {
-		for (int i = 0; i < max_fishes; ++i)
-			fish = i;	
-	}
-	}	// end while loop
-	
+	for (int i = 0; i < max_fishes; ++i){
+			dFishes++;
+			fFishes++;
+			
+			fish = *dFishes + *fFishes;
+	}	
 	return fishes[fish];
 }
 
 Population::remove(int fish) {
 	while (fishes[fish] >= fishes[1]) {
-		for (int i = 0; i < max_fish; ++i)
-	double dist = fish[i].getX() * fish[i].getX() + fish[i].getY() * fish[i].getY();
-	double distance = double sqrt(dist);
-	if (distance > 100) {
-		fish[i] = NULL;	
-	}
+		for (int i = 0; i < max_fishes; ++i) {
+			double dist = fish[i].getX() * fish[i].getX() + fish[i].getY() * fish[i].getY();
+			double distance = double sqrt(dist);
+		}
+			if (distance > 100) {
+				fish[i] = NULL;	
+			}
 	}	// end while loop
 	
 	return fishes[fish];
