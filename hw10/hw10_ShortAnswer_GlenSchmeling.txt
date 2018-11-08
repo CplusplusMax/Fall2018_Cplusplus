@@ -1,0 +1,29 @@
+Short Answer Text for HW10     Glen Schmeling
+
+1. What is the fundamental difference between how Java and C++ implement collections?
+
+	In JAVA, an ArrayList contains a list of Objects; and because Object is a superclass of all classes, 
+	you can put any kind of object in an ArrayList and then use get and set methods to manipulate it.  
+	In C++, you have to use templates (from a standard set of collections templates called the Standard
+	Template Library(STL)); use C++'s version of an ArrayList called vectors, create a vector and add elements
+	by utilizing the push_back() method.  Because vectors can use operator overloading, you can use [] to
+	access elements of the list.
+	
+	
+2. What is the difference between a template and a class?
+
+	A template is different from a class in that it is a description of how you would write a class, 
+	but leaves out one or more data types to be specified later.
+
+
+3. What are some of the drawbacks of templates?
+
+	Some drawbacks of templates is that it creates a new class for each type, and thus
+	the compiled code is bigger as the executable files are larger, which slows down
+	compilation.  Also, you can't cast one template to another, and can't write a method 
+	that would take either as an argument.
+
+4. What is an iterator?
+
+	An iterator is a class that represents the current element of a collection and
+	lets you step from one element to the next.
