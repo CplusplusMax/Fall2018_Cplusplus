@@ -19,14 +19,14 @@ public:
 	void position();
 	void position(double x, double y);
 	double speed();
-	double direction(const Angle& angle);
-	double turn_rate(const Angle& angle);
+	T direction(const Angle& angle);
+	T turn_rate(const Angle& angle);
 	double getX() const;
 	double getY() const;
 	void set(double x, double y);
 	double swim();
 	
-	friend std::ostream& operator<<(std::ostream& cout, const Angle& angle);
+	//friend std::ostream& operator<<(std::ostream& cout, const Angle& angle);
 	
 }; // end of Fish class
 #endif

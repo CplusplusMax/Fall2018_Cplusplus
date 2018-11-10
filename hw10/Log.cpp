@@ -6,8 +6,6 @@
 #include "Angle.h"
 #include "Log.h"
 #include "Fish.h"
-#include "Population.h"
-#include "List.h"
 
 Log::Log() {
 	this->msg  = "Good so far.";
@@ -26,6 +24,10 @@ void Log::pr(const std::string& msg) {
 	//return 0;
 }
 
+std::ostream& operator<<(std::ostream& cout, const Log& msg) {
+	cout<<msg;
+	return cout;
+}
 
 
 //Log::Log(const std::string& msg) {

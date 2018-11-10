@@ -1,4 +1,3 @@
-#include <cstdio>
 #include <iostream>
 #include "Angle.h"
 #include "Log.h"
@@ -18,7 +17,7 @@ int main(int argc, char** argv ) {
 		
 	
 	Log& logIt = Log::getInstance();
-	std::out << logIt.pr() << std::endl;	
+	std::cout << logIt.pr() << std::endl;	
 	
 	
 }

@@ -7,10 +7,8 @@
 #include "Angle.h"
 #include "Log.h"
 #include "Fish.h"
-#include "Population.h"
 #include "FlippyFish.h"
 #include "DrunkenFish.h"
-#include "List.h"
 
 DrunkenFish::Fish();
 DrunkenFish::~Fish(); // end of destructor
@@ -30,7 +28,7 @@ double DrunkenFish::swim() {
 	else y -= speed;
 } // end of drunken fish swim method
 
-std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
-	cout<<angle;
-	return cout;
-}
+//std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
+//	cout<<angle;
+//	return cout;
+//}

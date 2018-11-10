@@ -6,10 +6,8 @@
 #include "Angle.h"
 #include "Log.h"
 #include "Fish.h"
-#include "Population.h"
 #include "FlippyFish.h"
 #include "DrunkenFish.h"
-#include "List.h"
 
 
 Fish::Fish() {
@@ -38,7 +36,7 @@ void Fish::set(double x, double y) {
 	this->y = y;
 } // end of set() method
 
-std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
+std::ostream& operator<<(std::ostream& cout, const Fish& angle) {
 	cout<<angle;
 	return cout;
 }

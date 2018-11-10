@@ -1,13 +1,11 @@
 // FILE: Angle.h
 // ANGLE CLASS DEFINITION
 
-#include <cstdio>
 #include <iostream>
 #include <exception>
 #include <cmath>
 #include <cstdlib>
 #include <string>
-#include "Angle.h"
 #include "Log.h"
 #include "Fish.h"
 #include <array>	// removed the population class and am using the STL collection array
@@ -37,17 +35,17 @@ public:
 		this->angle = angle;
 	} // end of set method
 	Angle operator+=(const Angle& angle) const {	// operator+= overload
-		while(angle.getAngle() > 359)	{
+		if(angle.getAngle() > 359)	{
 			return Angle(angle += angle.getAngle()-360);
-			break;
-		} // end while
+			//break;
+		} else// end while
 		return Angle(angle += angle.getAngle());
 	}	// end of operator+= overload
 	Angle operator-=(const Angle& angle) const {	// operator-= overload
-		while(angle.getAngle() > 359)	{
+		if(angle.getAngle() > 359)	{
 			return Angle(angle -= angle.getAngle()-360);
-			break;
-		} // end while
+			//break;
+		} else   // end if
 		return Angle(angle += angle.getAngle());
 	}	// end of operator-= overload
 	bool operator==(const Angle& angle) const {	// operator== overload
@@ -62,12 +60,12 @@ public:
 	Angle(const Angle& angle) {	// copy constructor
 		*this = angle;
 	}  // end of copy constructor	
-		friend std::ostream& operator<<(std::ostream& out, const Angle& angle);
+		friend std::ostream& operator<<(std::ostream& cout, const Angle& angle);
 };  // end of Angle Class
-std::ostream& operator<<(std::ostream& out, const Angle& angle){
-	out << angle;
-	return out;
-}
+//std::ostream& operator<<(std::ostream& cout, const Angle& angle){
+//	cout << angle;
+//	return cout;
+//}
 #endif		// ANGLE_H
 
 // std::ostream& operator<<(std::ostream& out, const Angle& angle); (was line below };)
