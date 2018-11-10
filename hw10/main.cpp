@@ -10,29 +10,29 @@ int main(int argc, char** argv ) {
 	char msg;
 	
 	std::cout << "Aloha Professor!...and to the fishes in the deep blue sea." <<std::endl<<std::endl;
+
+
 	
-	Angle* ang1 = new Angle();
-	Angle* ang2 = new Angle();
-	Angle* ang3 = new Angle();
-	Angle* ang4 = new Angle();
-	
-	ang1->set(5.0);
-	ang2->set(60.0);
-	ang3->set(80.0);
-	ang4->set(320.0);
-	
-	FlippyFish* Fred = new FlippyFish();
-	DrunkenFish* Dave = new DrunkenFish();
+	//FlippyFish* Fred = new FlippyFish();
+	//DrunkenFish* Dave = new DrunkenFish();
 		
 	
 	Log& logIt = Log::getInstance();
-	//logIt.printf();	
+	std::out << logIt.pr() << std::endl;	
 	
 	
 }
 	
+	// Old code	
+	// Angle* ang1 = new Angle();
+	// Angle* ang2 = new Angle();
+	// Angle* ang3 = new Angle();
+	// Angle* ang4 = new Angle();
 	
-	
+	//ang1->set(5.0);
+	//ang2->set(60.0);
+	//ang3->set(80.0);
+	//ang4->set(320.0);
 	// initializing a non-pointer type angle
 	//Angle plus(90.0);
 	
