@@ -1,6 +1,8 @@
 // FILE: Fish.h
 // FISH CLASS DEFINITION
-
+#include <iostream>
+#include <string>
+#include <array>
 #ifndef FISH_H		// used to avoid multiple definitions
 #define FISH_H
 
@@ -25,7 +27,7 @@ public:
 	virtual void set(double x, double y);
 	virtual double swim()=0;
 	
-	friend std::ostream& operator<<(std::ostream& cout, const Fish& angle);
+	//friend std::ostream& operator<<(std::ostream& cout, const Fish& angle);
 	
 }; // end of Fish class
 #endif

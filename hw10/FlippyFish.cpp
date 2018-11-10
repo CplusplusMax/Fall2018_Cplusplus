@@ -4,11 +4,10 @@
 #include <cmath>
 #include <cstdlib>
 #include <string>
+#include <array>
 #include "Angle.h"
-#include "Log.h"
 #include "Fish.h"
 #include "FlippyFish.h"
-#include "DrunkenFish.h"
 
 FlippyFish::Fish();
 FlippyFish::~Fish(); // end of destructor
@@ -16,10 +15,10 @@ FlippyFish::~Fish(); // end of destructor
 void FlippyFish::position();
 void FlippyFish::position(double x, double y);
 double FlippyFish::speed();
-Angle::T FlippyFish::direction(const Angle& angle){
+FlippyFish::direction(const Angle<class T>& angle){
 	return angle;
 }
-Angle::T FlippyFish::turn_rate(const Angle& angle);
+FlippyFish::turn_rate(const Angle<class T>& angle);
 	return Angle(angle + angle.getAngle()/4);
 }
 double FlippyFish::getX() const;
@@ -35,7 +34,7 @@ double FlippyFish::swim() {
 } // end of drunken fish swim method
 
 
-//std::ostream& operator<<(std::ostream& cout, const Angle& angle) {
-//	cout<<angle;
-//	return cout;
-//}
+std::ostream& operator<<(std::ostream& cout, const Angle<class T>& angle) {
+	cout<<angle;
+	return cout;
+}

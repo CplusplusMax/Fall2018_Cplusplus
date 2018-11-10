@@ -1,6 +1,8 @@
 // FILE: Log.h
 // LOG CLASS DEFINITION
 
+#include <iostream>
+#include <string>
 #ifndef LOG_H		// used to avoid multiple definitions
 #define LOG_H
 
@@ -8,9 +10,10 @@ class Log {
 
 private:
 	Log();		// no-argument constructor
-	const std::string msg;
+	
 
 public:
+	const std::string& msg;
 	void pr(const std::string& msg);
 	static Log& getInstance();
 	

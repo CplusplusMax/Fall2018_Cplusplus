@@ -1,12 +1,18 @@
 #include <iostream>
-#include "Angle.h"
+#include <exception>
+#include <cmath>
+#include <cstdlib>
+#include <string>
+#include <array>
+//#include "Angle.h"
 #include "Log.h"
-#include "FlippyFish.h"
+#include "Fish.h"
+//#include "FlippyFish.h"
 #include "DrunkenFish.h"
 
 int main(int argc, char** argv ) {
 
-	char msg;
+	//const std::string& msg;
 	
 	std::cout << "Aloha Professor!...and to the fishes in the deep blue sea." <<std::endl<<std::endl;
 
@@ -17,7 +23,7 @@ int main(int argc, char** argv ) {
 		
 	
 	Log& logIt = Log::getInstance();
-	std::cout << logIt.pr() << std::endl;	
+	std::cout << logIt.pr(msg) << std::endl;	
 	
 	
 }

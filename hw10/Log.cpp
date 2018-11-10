@@ -3,9 +3,6 @@
 #include <cmath>
 #include <cstdlib>
 #include <string>
-#include "Angle.h"
-#include "Log.h"
-#include "Fish.h"
 
 Log::Log() {
 	this->msg  = "Good so far.";

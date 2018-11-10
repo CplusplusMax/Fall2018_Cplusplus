@@ -4,10 +4,8 @@
 #include <cmath>
 #include <cstdlib>
 #include <string>
-#include "Angle.h"
-#include "Log.h"
+#include <array>
 #include "Fish.h"
-#include "FlippyFish.h"
 #include "DrunkenFish.h"
 
 DrunkenFish::Fish();

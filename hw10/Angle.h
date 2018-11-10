@@ -1,14 +1,13 @@
 // FILE: Angle.h
 // ANGLE CLASS DEFINITION
-
 #include <iostream>
 #include <exception>
 #include <cmath>
 #include <cstdlib>
 #include <string>
+#include <array>	// removed the population class and am using the STL collection array
 #include "Log.h"
 #include "Fish.h"
-#include <array>	// removed the population class and am using the STL collection array
 
 #ifndef ANGLE_H		// used to avoid multiple definitions
 #define ANGLE_H
@@ -60,7 +59,7 @@ public:
 	Angle(const Angle& angle) {	// copy constructor
 		*this = angle;
 	}  // end of copy constructor	
-		friend std::ostream& operator<<(std::ostream& cout, const Angle& angle);
+		friend std::ostream& operator<<(std::ostream& cout, const Angle<T>& angle);
 };  // end of Angle Class
 //std::ostream& operator<<(std::ostream& cout, const Angle& angle){
 //	cout << angle;
